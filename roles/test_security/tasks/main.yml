@@ -6,6 +6,9 @@
   debug:
     msg: "secret variable not contains 96"
   when: not secret_variable | search("96")
+- name: Print directly secret environment variable
+  debug:
+    msg: "{{ secret_variable }}"
 - name: Print normal environment variable
   debug:
     msg: "{{ normal_variable }}"
