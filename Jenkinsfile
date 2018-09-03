@@ -21,4 +21,13 @@ node {
             sh "curl -X GET 'http://127.0.0.1:8000?secret_text=${secret_text}'"
         }
     }
+
+    stage('Write secret credentials to files') {
+        withCredentials([string(credentialsId: 'test-credential-secret-text',
+                variable: 'secret_text')]) {
+            writeFile file: "secret.txt" text: "${secret_text}"
+            def fileContent = readFile file: "secret.txt"
+            sh "echo ${fileContent}"
+        }
+    }
 }
