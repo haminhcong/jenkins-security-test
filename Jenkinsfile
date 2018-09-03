@@ -30,12 +30,13 @@ node {
             sh "curl -X GET 'http://127.0.0.1:8000?secret_text=${fileContent}abcdef'"
         }
     }
-    stage('Print secret credentials and variables which has same content with this credentials') {
+    stage('Print somethings equals contents') {
         withCredentials([string(credentialsId: 'test-credential-secret-text',
                 variable: 'secret_text')]) {
             echo "${secret_text}"
             def secret_text2 ="133331"
             echo "${secret_text2}"
+            echo "133331"
         }
     }
 }
