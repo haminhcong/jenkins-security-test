@@ -1,0 +1,4 @@
+- name: Print secret environment variable
+  shell: "echo {{secret_variable}}"
+- name: Print normal environment variable
+  shell: "echo {{normal_variable}}"

@@ -1,0 +1,3 @@
+- host: jenkins_local
+  roles:
+  - test_security
