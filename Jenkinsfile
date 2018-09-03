@@ -25,7 +25,7 @@ node {
     stage('Write secret credentials to files') {
         withCredentials([string(credentialsId: 'test-credential-secret-text',
                 variable: 'secret_text')]) {
-            writeFile file: "secret.txt" text: "${secret_text}"
+            writeFile file: "secret.txt", text: "${secret_text}"
             def fileContent = readFile file: "secret.txt"
             sh "echo ${fileContent}"
         }
