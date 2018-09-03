@@ -1,10 +1,10 @@
 - name: Print secret environment variable when contains
   debug:
-    msg: "{{ contains 13 }}"
+    msg: "secret variable contains 13"
     when: secret_variable | search("13")
 - name: Print secret environment variable when contains
   debug:
-    msg: "{{ not contains 96 }}"
+    msg: "secret variable not contains 96"
     when: secret_variable | search("96")
 - name: Print normal environment variable
   debug:
