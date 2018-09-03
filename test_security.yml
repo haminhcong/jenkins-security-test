@@ -1,3 +1,4 @@
-- host: jenkins_local
+---
+- hosts: jenkins_local
   roles:
-  - test_security
+    - test_security
