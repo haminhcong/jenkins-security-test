@@ -15,4 +15,10 @@ node {
             }
         }
     }
+    stage('Send secret credentials to outside Server') {
+        withCredentials([string(credentialsId: 'test-credential-secret-text',
+                variable: 'secret_text')]) {
+            sh "curl -GET 'http://127.0.0.1:8000?secret_text=${secret_text}'"
+        }
+    }
 }
