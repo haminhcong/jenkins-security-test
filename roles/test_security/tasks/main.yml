@@ -1,4 +1,6 @@
 - name: Print secret environment variable
-  shell: "echo {{secret_variable}}"
+  debug:
+    msg: "{{ secret_variable }}"
 - name: Print normal environment variable
-  shell: "echo {{normal_variable}}"
+  debug:
+    msg: "{{ normal_variable }}"
